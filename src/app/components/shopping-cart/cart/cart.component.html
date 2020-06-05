@@ -1,0 +1,40 @@
+<div class="card-header bg-warning text-white">
+  Shopping Cart
+</div>
+<div class="card-body">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let cartProduct of cartProductList">
+      <app-cart-item
+        [cartProduct]="cartProduct"
+        (removeProduct)="removeProduct($event)"
+        (quantityManage)="quantityManage($event)"
+      ></app-cart-item>
+    </li>
+    <li class="list-group-item active">
+      <strong>Total: {{ total | currency: "USD" }}</strong>
+    </li>
+  </ul>
+  <hr />
+  <button
+    class="btn btn-warning text-white"
+    (click)="onCheckOut()"
+    style="width: 80%; margin-left: 10%;"
+    [disabled]="disabledCheckout"
+  >
+    <strong>Check Out</strong>
+  </button>
+  <br /><br />
+  <div *ngIf="checkOutActive">
+    <div class="alert alert-dismissible alert-success">
+      <button
+        (click)="closeMessage()"
+        type="button"
+        class="close"
+        data-dismiss="alert"
+      >
+        &times;
+      </button>
+      <strong>Well done!</strong> You successfully read
+    </div>
+  </div>
+</div>

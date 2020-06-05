@@ -1,0 +1,41 @@
+<div class="card-item">
+  <div class="row">
+    <div class="col-sm-2">
+      <img width="40" height="40" [src]="product.img" />
+    </div>
+    <div class="col-sm-2">
+      <div class="row">
+        <a href="#">{{ product.name }}</a>
+      </div>
+      <div class="row">
+        <strong>{{ cartProduct.price | currency: "USD" }}</strong>
+        <s style="color: #ff0000;">{{ oldPrice | currency: "USD" }}</s>
+      </div>
+    </div>
+    <div class="col-sm-1">
+      <br />
+      <button class="btn btn-danger btn-sm" (click)="decrease()">-</button>
+    </div>
+    <div class="col-sm-1">
+      <br />
+      <button class="btn-outline-secondary btn-sm">
+        {{ cartProduct.quantity }}
+      </button>
+    </div>
+    <div class="col-sm-1">
+      <br />
+      <button class="btn btn-primary btn-sm" (click)="increase()">+</button>
+    </div>
+    <div class="col-sm-5" style="padding-left: 50px;">
+      <div class="row">
+        <strong>{{ total | currency: "USD" }}</strong>
+      </div>
+      <div class="row">
+        <button (click)="onRemove()" class="btn btn-danger text-white btn-sm">
+          <i>Eliminar</i>
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="card mb-4 shadow-sm">
+  <img
+    class="bd-placeholder-img card-img-top"
+    width="100%"
+    [src]="product.img"
+    width="200"
+    height="180"
+  />
+  <div class="card-body">
+    <a href="#"
+      ><strong>{{ product.name }}</strong></a
+    >
+    <p>Descripcion.....</p>
+    <hr />
+    <i>Categoria: </i>
+    <a href="#"
+      ><strong>{{ product.category }}</strong></a
+    >
+    <p class="card-text">
+      <i>Promo: </i>
+      <strong>{{ product.price | currency: "USD" }}</strong
+      ><br />
+      <i>Precio: </i>
+      <strong
+        ><s style="color: #ff0000;">{{ oldPrice | currency: "USD" }}</s></strong
+      >
+    </p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary">
+          View
+        </button>
+        <button
+          (click)="onSubmit()"
+          type="button"
+          class="btn btn-sm btn-outline-primary"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

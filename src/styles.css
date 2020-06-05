@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.card-item {
+  font-size: small;
+}
+.slider {
+  width: 95%;
+  margin: auto;
+  overflow: hidden;
+}
+.input_number {
+  width: 45;
+}
+.container {
+  max-width: 1340px;
+}
